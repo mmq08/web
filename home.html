@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+
+
+<style>
+
+* {box-sizing: border-box;}
+
+body,html {
+ height:100%; 
+ margin:3;
+}
+  .tabs{
+  background-color:red;
+  color:white;
+ float:left;
+ border:currentcolor;
+ cursor:pointer;
+ padding: 14px 16px;
+ font-size: 17px;
+ width: 33.33%;
+  }
+
+.tabs:hover{
+background-color:cadetblue;
+
+
+}
+ #Home {background-color:cyan}
+ #Service { background-color: cyan;}
+ 
+ 
+ .tabcontent {
+ color:darkgrey;
+ display:none;
+ padding: 100px 20px;
+ height:100%;
+
+
+ }
+
+
+
+</style>
+
+</head>
+
+<body>
+    <button class="tabs" id="deafultOpen" onclick="openpage('Home',this,'black')"> Home </button>
+    <button class="tabs"   onclick="openpage('Service',this,'cyan')"> Services    </button>
+    
+
+<div id="Home" class="tabcontent">
+<h3> HOME </h3>
+</div>
+
+<div id="Service" class="tabcontent">
+    <h3> services </h3>
+    </div>
+
+      
+
+
+
+
+<script>
+function openpage(pageName,elmnt,color) {
+var i, tabcontent, tablinks;
+tabcontent = document.getElementsByClassName('tabcontent');
+for(i = 0; i <tabcontent.length;i++){
+ tabcontent[i].style.display ="none";
+}
+tablinks = document.getElementsByClassName("tabs");
+for(i = 0; i < tablinks.length;i++){
+tablinks[i].style.backgroundcolor="";
+}
+document.getElementById(pageName).style.display = "block"
+elmnt.style.backgroundcolor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+
+
+</script>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+</html>
